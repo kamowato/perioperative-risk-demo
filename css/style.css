@@ -1,0 +1,365 @@
+/* === Base === */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --sc1: #374E55;
+  --sc2: #DF8F44;
+  --sc3: #00A1D5;
+  --sc4: #B24745;
+  --bg: #fafafa;
+  --text: #222;
+  --muted: #666;
+  --border: #ddd;
+  --accent: #0072B5;
+  --danger: #c0392b;
+  --font: 'Segoe UI', Arial, Helvetica, sans-serif;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+/* === Disclaimer Banner === */
+#disclaimer-banner {
+  background: #fff3cd;
+  color: #856404;
+  border-bottom: 1px solid #ffc107;
+  text-align: center;
+  padding: 6px 12px;
+  font-size: 13px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  margin: 0 -16px;
+}
+
+/* === Header === */
+#app-header {
+  text-align: center;
+  padding: 24px 0 8px;
+}
+
+#app-header h1 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text);
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* === Abstract === */
+#abstract-section {
+  margin: 12px 0 20px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: #fff;
+  padding: 12px 16px;
+}
+
+#abstract-section summary {
+  cursor: pointer;
+  font-size: 15px;
+}
+
+#abstract-content {
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #444;
+  white-space: pre-line;
+}
+
+/* === Controls === */
+#controls {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  flex-wrap: wrap;
+}
+
+#control-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#control-row-presets, #control-row-actions {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.control-group-label {
+  font-size: 12px;
+  color: var(--muted);
+  margin-right: 2px;
+}
+
+.btn-preset {
+  font-weight: 600;
+  min-width: 44px;
+  text-align: center;
+}
+
+.btn-preset.active {
+  color: #fff;
+  border-color: transparent;
+}
+
+#btn-perturb {
+  margin-left: 4px;
+  font-style: italic;
+  color: var(--muted);
+  border-style: dashed;
+}
+
+button, #csv-upload-label {
+  font-family: var(--font);
+  font-size: 13px;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+button:hover, #csv-upload-label:hover {
+  background: #f0f0f0;
+}
+
+#csv-upload {
+  display: none;
+}
+
+#csv-upload-label {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+#csv-upload-label:hover {
+  background: #005f96;
+}
+
+/* === Result Panel === */
+#result-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  min-width: 280px;
+}
+
+#result-sc {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.result-label {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Distance bars */
+#distance-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 2px;
+}
+
+.dist-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+}
+
+.dist-bar-label {
+  width: 28px;
+  text-align: right;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.dist-bar-track {
+  flex: 1;
+  height: 10px;
+  background: #eee;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.dist-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.dist-bar-value {
+  width: 36px;
+  text-align: right;
+  font-size: 10px;
+  color: var(--muted);
+}
+
+#result-sc-value {
+  font-weight: 700;
+  font-size: 18px;
+  padding: 2px 10px;
+  border-radius: 4px;
+}
+
+#result-details {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* === Charts === */
+#charts {
+  margin: 8px 0;
+}
+
+.chart-impact-legend {
+  font-size: 11px;
+  color: #999;
+  margin-bottom: 8px;
+}
+
+.chart-category-header {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 16px 0 6px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--border);
+}
+
+.chart-category-header:first-child {
+  margin-top: 0;
+}
+
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 8px;
+}
+
+.chart-panel {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 8px 8px 4px;
+}
+
+.chart-panel .chart-title {
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.chart-impact {
+  font-size: 10px;
+  color: var(--muted);
+  text-align: center;
+  margin-bottom: 2px;
+}
+
+.chart-impact.negligible {
+  color: #bbb;
+  font-style: italic;
+}
+
+.chart-panel svg {
+  display: block;
+}
+
+/* SVG styling */
+.trajectory-line { fill: none; stroke-width: 2; opacity: 0.85; }
+.trajectory-band { opacity: 0.12; }
+.patient-line { fill: none; stroke: #111; stroke-width: 2.5; stroke-dasharray: 6 3; }
+.chart-panel {
+  touch-action: pan-x pan-y;
+}
+
+.chart-panel svg {
+  touch-action: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.drag-overlay {
+  cursor: crosshair;
+}
+
+.axis text { font-size: 10px; }
+.axis path, .axis line { stroke: #ccc; }
+
+/* === Legend === */
+#legend {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 12px 0;
+  font-size: 13px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: default;
+}
+
+.legend-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+}
+
+.legend-label { color: var(--muted); }
+
+/* === Footer === */
+footer {
+  text-align: center;
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+footer a { color: var(--accent); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+.disclaimer-footer {
+  margin-top: 8px;
+  font-size: 11px;
+  color: #999;
+}
+
+
+/* === Responsive === */
+@media (max-width: 500px) {
+  .chart-grid { grid-template-columns: 1fr; }
+  #controls { flex-direction: column; align-items: flex-start; }
+}

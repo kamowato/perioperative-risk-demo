@@ -1,0 +1,225 @@
+{
+  "title": "Intraoperative Vital Sign Trajectories and Acute Kidney Injury After Pancreaticoduodenectomy",
+  "abstract": "Importance: Pancreaticoduodenectomy (PD) is a complex operation with substantial intraoperative hemodynamic variation. Threshold-based monitoring of individual variables may not adequately capture coordinated physiological changes during surgery.\n\nObjective: To identify physiological subtypes using dynamic time warping (DTW) clustering of multivariate intraoperative vital signs and to examine their association with postoperative acute kidney injury (AKI).\n\nDesign: Retrospective cohort study at a tertiary academic medical center in Sendai, Japan. Consecutive patients who underwent PD between April 2014 and March 2024.\n\nResults: Among 666 patients, 4 subclusters were identified: SC1 (n=247), SC2 (n=156), SC3 (n=147), and SC4 (n=116). AKI incidence differed across subclusters (SC1, 6.1%; SC2, 14.1%; SC3, 7.5%; SC4, 5.2%; P=.02). SC2 had higher odds of AKI than SC1 (adjusted OR, 2.70 [95% CI, 1.34-5.45]; P=.005).\n\nConclusions: DTW clustering of intraoperative multivariate vital signs identified 4 physiological subtypes. A subtype characterized by tachycardia, higher mean arterial pressure, and lower urine output had higher odds of postoperative AKI. These findings support trajectory-based perioperative phenotyping as a potentially useful approach for postoperative risk stratification.",
+  "subclusters": {
+    "SC1": {
+      "color": "#374E55",
+      "n": 247,
+      "phenotype": "Stable hemodynamics",
+      "aki": {
+        "rate": 6.1,
+        "n": 15,
+        "label": "Low risk"
+      }
+    },
+    "SC2": {
+      "color": "#DF8F44",
+      "n": 156,
+      "phenotype": "Tachycardic / oliguria",
+      "aki": {
+        "rate": 14.1,
+        "n": 22,
+        "label": "High risk (OR 2.70)"
+      }
+    },
+    "SC3": {
+      "color": "#00A1D5",
+      "n": 147,
+      "phenotype": "Low perfusion",
+      "aki": {
+        "rate": 7.5,
+        "n": 11,
+        "label": "Moderate risk"
+      }
+    },
+    "SC4": {
+      "color": "#B24745",
+      "n": 116,
+      "phenotype": "Prolonged surgical burden",
+      "aki": {
+        "rate": 5.2,
+        "n": 6,
+        "label": "Low risk"
+      }
+    }
+  },
+  "trajectory_vars": {
+    "HR(心拍数)": {
+      "en": "Heart Rate",
+      "unit": "bpm"
+    },
+    "ABP(S)(観血)": {
+      "en": "Invasive SBP",
+      "unit": "mmHg"
+    },
+    "ABP(D)(観血)": {
+      "en": "Invasive DBP",
+      "unit": "mmHg"
+    },
+    "ART(M)": {
+      "en": "Invasive MAP",
+      "unit": "mmHg"
+    },
+    "SYS": {
+      "en": "NIBP SBP",
+      "unit": "mmHg"
+    },
+    "DIAS": {
+      "en": "NIBP DBP",
+      "unit": "mmHg"
+    },
+    "MEAN": {
+      "en": "NIBP MAP",
+      "unit": "mmHg"
+    },
+    "SpO2": {
+      "en": "SpO₂",
+      "unit": "%"
+    },
+    "ANESFiO2": {
+      "en": "FiO₂",
+      "unit": "%"
+    },
+    "ANESEtCO2": {
+      "en": "EtCO₂",
+      "unit": "mmHg"
+    },
+    "TNASO": {
+      "en": "Nasopharyngeal Temp",
+      "unit": "°C"
+    },
+    "TBLAD": {
+      "en": "Bladder Temp",
+      "unit": "°C"
+    },
+    "BIS": {
+      "en": "BIS",
+      "unit": ""
+    },
+    "フェニレフリン": {
+      "en": "Phenylephrine",
+      "unit": "/min"
+    },
+    "ノルアドレナリン": {
+      "en": "Noradrenaline",
+      "unit": "/min"
+    },
+    "輸液_ボルベン": {
+      "en": "Voluven",
+      "unit": "/min"
+    }
+  },
+  "variable_aliases": {
+    "HR": "HR(心拍数)",
+    "HeartRate": "HR(心拍数)",
+    "HR(心拍数)": "HR(心拍数)",
+    "MAP": "ART(M)",
+    "ART(M)": "ART(M)",
+    "MAP_inv": "ART(M)",
+    "SpO2": "SpO2",
+    "EtCO2": "ANESEtCO2",
+    "ANESEtCO2": "ANESEtCO2",
+    "ETCO2": "ANESEtCO2",
+    "TNASO": "TNASO",
+    "T_naso": "TNASO",
+    "NasopharyngealTemp": "TNASO",
+    "TBLAD": "TBLAD",
+    "T_blad": "TBLAD",
+    "BladderTemp": "TBLAD",
+    "ABP_S": "ABP(S)(観血)",
+    "ABP(S)(観血)": "ABP(S)(観血)",
+    "SBP_inv": "ABP(S)(観血)",
+    "ABP_D": "ABP(D)(観血)",
+    "ABP(D)(観血)": "ABP(D)(観血)",
+    "DBP_inv": "ABP(D)(観血)",
+    "SYS": "SYS",
+    "SBP_nibp": "SYS",
+    "DIAS": "DIAS",
+    "DBP_nibp": "DIAS",
+    "MEAN": "MEAN",
+    "MAP_nibp": "MEAN",
+    "FiO2": "ANESFiO2",
+    "ANESFiO2": "ANESFiO2",
+    "BIS": "BIS",
+    "Phenylephrine": "フェニレフリン",
+    "フェニレフリン": "フェニレフリン",
+    "Noradrenaline": "ノルアドレナリン",
+    "ノルアドレナリン": "ノルアドレナリン",
+    "Voluven": "輸液_ボルベン",
+    "輸液_ボルベン": "輸液_ボルベン"
+  },
+  "pca_variable_order": [
+    "HR(心拍数)",
+    "ABP(S)(観血)",
+    "ABP(D)(観血)",
+    "ART(M)",
+    "SYS",
+    "DIAS",
+    "MEAN",
+    "SpO2",
+    "ANESFiO2",
+    "ANESEtCO2",
+    "TNASO",
+    "TBLAD",
+    "BIS",
+    "フェニレフリン",
+    "ノルアドレナリン",
+    "輸液_ボルベン"
+  ],
+  "variable_importance": {
+    "HR(心拍数)": 7.2,
+    "ABP(S)(観血)": 7.0,
+    "ABP(D)(観血)": 7.1,
+    "ART(M)": 7.3,
+    "SYS": 6.3,
+    "DIAS": 6.5,
+    "MEAN": 7.1,
+    "SpO2": 7.1,
+    "ANESFiO2": 6.6,
+    "ANESEtCO2": 7.3,
+    "TNASO": 5.4,
+    "TBLAD": 7.2,
+    "BIS": 5.2,
+    "フェニレフリン": 6.4,
+    "ノルアドレナリン": 0.0,
+    "輸液_ボルベン": 6.0
+  },
+  "variable_categories": [
+    {
+      "name": "Hemodynamics",
+      "vars": [
+        "HR(心拍数)",
+        "ABP(S)(観血)",
+        "ABP(D)(観血)",
+        "ART(M)",
+        "SYS",
+        "DIAS",
+        "MEAN"
+      ]
+    },
+    {
+      "name": "Oxygenation & Ventilation",
+      "vars": [
+        "SpO2",
+        "ANESFiO2",
+        "ANESEtCO2"
+      ]
+    },
+    {
+      "name": "Temperature & Neuromonitoring",
+      "vars": [
+        "TNASO",
+        "TBLAD",
+        "BIS"
+      ]
+    },
+    {
+      "name": "Anesthesia Management",
+      "vars": [
+        "フェニレフリン",
+        "ノルアドレナリン",
+        "輸液_ボルベン"
+      ]
+    }
+  ]
+}

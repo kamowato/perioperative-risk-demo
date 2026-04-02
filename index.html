@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perioperative Physiological Phenotyping Demo</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+</head>
+<body>
+  <!-- Disclaimer Banner -->
+  <div id="disclaimer-banner">
+    <strong>Research Demonstration Only</strong> &mdash; Not for clinical use. This application is provided as supplementary material for academic purposes.
+  </div>
+
+  <!-- Header -->
+  <header id="app-header">
+    <h1 id="paper-title"></h1>
+    <p class="subtitle">Interactive Supplementary Demo &mdash; Intraoperative Trajectory Phenotyping</p>
+  </header>
+
+  <!-- Abstract -->
+  <section id="abstract-section">
+    <details open>
+      <summary><strong>Abstract</strong></summary>
+      <div id="abstract-content"></div>
+    </details>
+  </section>
+
+  <!-- Controls -->
+  <section id="controls">
+    <div id="control-rows">
+      <div id="control-row-presets">
+        <span class="control-group-label">Start from:</span>
+        <button class="btn-preset" data-sc="SC1">SC1</button>
+        <button class="btn-preset" data-sc="SC2">SC2</button>
+        <button class="btn-preset" data-sc="SC3">SC3</button>
+        <button class="btn-preset" data-sc="SC4">SC4</button>
+        <button id="btn-perturb" title="Add random noise to current curves">Perturb</button>
+      </div>
+      <div id="control-row-actions">
+        <label id="csv-upload-label" for="csv-upload">
+          Upload CSV
+          <input type="file" id="csv-upload" accept=".csv">
+        </label>
+        <button id="btn-sample" title="Download sample CSV">Sample CSV</button>
+      </div>
+    </div>
+    <div id="result-panel">
+      <div id="result-sc">
+        <span class="result-label">Assigned Subcluster:</span>
+        <span id="result-sc-value">--</span>
+      </div>
+      <div id="result-details"></div>
+      <div id="distance-bars"></div>
+    </div>
+  </section>
+
+  <!-- Charts -->
+  <section id="charts"></section>
+
+  <!-- Subcluster Legend -->
+  <section id="legend"></section>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      <a href="#" id="github-link" target="_blank">View Source Code on GitHub</a>
+      &middot; DOI: <span id="doi-placeholder">[to be added]</span>
+    </p>
+    <p class="disclaimer-footer">
+      Disclaimer: This application is a concept demonstration provided as supplementary material
+      for academic research. It is not validated for clinical decision-making.
+      All computations run locally in your browser &mdash; no data is transmitted to any server.
+    </p>
+  </footer>
+
+  <script src="js/dtw.js?v=2"></script>
+  <script src="js/pca.js?v=2"></script>
+  <script src="js/csv-parser.js?v=2"></script>
+  <script src="js/chart.js?v=2"></script>
+  <script src="js/drag.js?v=2"></script>
+  <script src="js/ui.js?v=2"></script>
+  <script src="js/main.js?v=2"></script>
+</body>
+</html>
