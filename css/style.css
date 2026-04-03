@@ -351,6 +351,21 @@ footer {
 footer a { color: var(--accent); text-decoration: none; }
 footer a:hover { text-decoration: underline; }
 
+.github-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #24292e;
+  color: #fff !important;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 0.15s;
+}
+.github-btn:hover { background: #444; text-decoration: none !important; }
+.github-btn svg { vertical-align: middle; }
+
 .disclaimer-footer {
   margin-top: 8px;
   font-size: 11px;
